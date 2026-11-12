@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d20">
+  <title>Orbit Zero | Space Adventure</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="starfield"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Orbit Zero home"><span class="brand-mark">✦</span> ORBIT<span>ZERO</span></a>
+      <div class="system-status"><i></i> ARCADE SYSTEM ONLINE</div>
+    </header>
+
+    <section id="welcomeScreen" class="screen welcome">
+      <div class="hero">
+        <div class="eyebrow"><span></span> DEEP SPACE • SURVIVAL MISSION</div>
+        <h1>SPACE<br><em>ADVENTURE</em></h1>
+        <p class="hero-text">Pilot your ship. Dodge incoming threats. Clear the galaxy one enemy at a time.</p>
+        <div class="control-guide">
+          <div class="control-row"><div class="keys"><kbd>←</kbd><kbd>↑</kbd><kbd>↓</kbd><kbd>→</kbd></div><span>Move your spaceship</span></div>
+          <div class="control-row"><div class="keys"><kbd class="space-key">SPACE</kbd></div><span>Fire energy shots</span></div>
+          <div class="control-row"><div class="keys"><kbd class="space-key">P</kbd></div><span>Pause / resume game</span></div>
+        </div>
+        <div class="start-controls">
+          <label for="difficulty">MISSION DIFFICULTY</label>
+          <select id="difficulty">
+            <option value="easy">Easy — Cadet</option>
+            <option value="medium" selected>Medium — Pilot</option>
+            <option value="hard">Hard — Commander</option>
+          </select>
+          <button id="startButton" class="primary-button">START MISSION <span>↗</span></button>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="orbit orbit-a"></div><div class="orbit orbit-b"></div>
+        <div class="planet"></div>
+        <div class="planet-ring"></div>
+        <div class="ship-illustration"><div class="ship-wing"></div><div class="ship-core"></div><div class="ship-flame"></div></div>
+        <div class="floating-label label-one">SECTOR 07 <b>●</b></div>
+        <div class="floating-label label-two">UNKNOWN SIGNAL</div>
+        <div class="art-coordinate">19° 42' N<br>SPACE SECTOR</div>
+      </div>
+      <div class="welcome-footer"><span>ORBIT ZERO / TRAINING SIMULATOR</span><span>VERSION 1.0.0</span></div>
+    </section>
+
+    <section id="gameScreen" class="screen game-screen hidden">
+      <div class="game-heading">
+        <div><p class="eyebrow">MISSION IN PROGRESS</p><h2>DEFEND THE GALAXY</h2></div>
+        <button id="pauseButton" class="ghost-button">Ⅱ <span>PAUSE</span></button>
+      </div>
+      <div class="hud">
+        <div class="hud-card"><span class="hud-label">SCORE</span><strong id="scoreValue">0000</strong></div>
+        <div class="hud-card lives-card"><span class="hud-label">SHIELDS</span><strong id="livesValue">♥ ♥ ♥</strong></div>
+        <div class="hud-card"><span class="hud-label">LEVEL</span><strong id="levelValue">01</strong></div>
+        <div class="hud-card"><span class="hud-label">BEST SCORE</span><strong id="bestValue">0000</strong></div>
+      </div>
+      <div class="canvas-wrap">
+        <canvas id="gameCanvas" width="900" height="520" aria-label="Space shooter game area"></canvas>
+        <div id="pauseOverlay" class="game-overlay hidden"><div class="overlay-panel"><p class="eyebrow">SYSTEM HOLD</p><h3>MISSION PAUSED</h3><p>Take a breath, pilot. The galaxy can wait.</p><button id="resumeButton" class="primary-button">RESUME MISSION</button></div></div>
+      </div>
+      <div class="game-bottom"><span><i class="live-dot"></i> LIVE SECTOR FEED</span><span>ARROW KEYS TO MOVE <b>•</b> SPACE TO SHOOT <b>•</b> P TO PAUSE</span></div>
+    </section>
+
+    <section id="gameOverScreen" class="screen result-screen hidden">
+      <div class="result-card">
+        <div class="result-symbol">✦</div>
+        <p class="eyebrow">MISSION REPORT</p>
+        <h2 id="resultTitle">MISSION COMPLETE</h2>
+        <p id="resultMessage" class="result-message">Your flight has been recorded.</p>
+        <div class="final-score"><span>FINAL SCORE</span><strong id="finalScore">0000</strong></div>
+        <div class="result-stats"><div><span>BEST SCORE</span><b id="resultBest">0000</b></div><div><span>SECTOR REACHED</span><b id="resultLevel">01</b></div></div>
+        <button id="playAgainButton" class="primary-button">PLAY AGAIN <span>↻</span></button>
+        <button id="homeButton" class="text-button">BACK TO HOME</button>
+      </div>
+    </section>
+    <footer class="page-footer"><span>© 2026 ORBIT ZERO</span><span>BUILT WITH HTML • CSS • JAVASCRIPT</span></footer>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
